@@ -12,11 +12,11 @@ app = Flask(__name__)
 @app.route("/add_comment", methods=["POST"])
 def create_comment():
     """Поиск постов по тексту"""
-    print(" ========================= We come here ========================= ")
+    #print(" ========================= We come here ========================= ")
     if not request.json:
         abort(400)
     Text = request.json.get("text")
-    print(" ========================= We come here again ========================= ")
+    #print(" ========================= We come here again ========================= ")
     results_list = crud.search_post_by_text(DataBase=DataBase, search_text=Text)
     return jsonify(results_list)
     #return jsonify({"res": "hygt6"})

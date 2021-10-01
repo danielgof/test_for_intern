@@ -1,6 +1,4 @@
-"""
-Скрипт для ввода данных в elasticsearch с исходного csv
-"""
+"""Скрипт для ввода данных в elasticsearch с исходного csv"""
 
 import csv
 import json
