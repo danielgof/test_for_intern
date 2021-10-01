@@ -11,11 +11,11 @@ def search_post_by_text(DataBase, search_text: str):
     id_list = [item["id"] for item in my_elastic.search_by_text(search_text)]
     que = f"SELECT * FROM test_data WHERE id IN{id_list} GROUP BY date LIMIT 20;"
     que = que.replace("[", "(").replace("]", ")")
-    print(id_list)
+    #print(id_list)
     # Получение полей СУБД с id, которые отдал нам elastic
     DBColData = DataBase.ExecuteReadQuery("DESCRIBE test_data")
     result = {"documents" : []}
-    print(que)
+    #print(que)
     full_data = DataBase.ExecuteReadQuery(que)
     for data in full_data:
         line = {}
